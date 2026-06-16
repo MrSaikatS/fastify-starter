@@ -1,11 +1,22 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "target": "ES2023",
-    "strict": true,
-    "esModuleInterop": true,
-    "rootDir": "src",
-    "outDir": "build"
-  }
+    /* ——————————————————————— Module & Resolution ——————————————————————— */
+    "module": "ESNext", // ESM output; the project is "type": "module"
+    "moduleResolution": "bundler", // resolves imports like bundlers (no extension lookups needed)
+    "resolveJsonModule": true, // allows importing .json files
+    "target": "ES2023", // downlevel to this JS version
+
+    /* ——————————————————————————— Strictness ———————————————————————————— */
+    "strict": true, // enables all strict type-checking flags
+    "noImplicitAny": true, // error on expressions with implicit `any`
+    "forceConsistentCasingInFileNames": true, // prevents case-mismatch bugs across OSes
+    "skipLibCheck": true, // skip .d.ts checking in node_modules (much faster)
+    "esModuleInterop": true, // smoother default imports from CJS modules
+
+    /* ————————————————————————————— Output ——————————————————————————————— */
+    "rootDir": "src", // sources live here
+    "outDir": "build", // compiled JS lands here
+    "sourceMap": false // no sourcemaps in build output
+  },
+  "include": ["src/**/*.ts"] // only compile source files
 }
